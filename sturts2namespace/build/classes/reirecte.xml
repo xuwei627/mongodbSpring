@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <package name="redirect" namespace="/redirect" extends="struts-default">
+    	<action name="dispatcher">
+    		<!-- ${parm} 可以取出值栈中的值 -->
+    		<result type="dispatcher">/dispatcher_use.jsp</result>
+    	</action>
+    	<action name="redirect">
+    		<!-- redirect 可以是页面  也可以是action -->
+    		<result type="redirect">dispatcher?user=qwewq</result>
+    	</action>
+    	<action name="chain">
+    		<!-- 重定向action  共享上一个action数据 -->
+    		<result type="chain">dispatcher</result>
+    	</action>
+    	<action name="redirectAction">
+    		<!-- 重定向actin  不共享数据 -->
+    		<result type="redirectAction">redirect</result>
+    	</action>
+
+    </package>
+</struts>

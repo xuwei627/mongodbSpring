@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+  	<typeAlias alias="Users" type="com.soft.xww.model.Users"/>
+  	
+  	<!-- 查询数据   -->
+  	<select id="selectUsers" resultClass="Users">
+  		select * from users
+  	</select>
+  	
+  	<!-- 条件查询 -->
+  	<select id="selectById" parameterClass="int" resultClass="Users">
+  		select * from users where id = # id#
+  	</select>
+  	
+  	  	<!-- 用户登录 -->
+  	<select id="selectUserExsit" parameterClass="Users" resultClass="Users">
+  		select * from users where username = #username# and password=#password#
+   	</select>
+</sqlMap>
