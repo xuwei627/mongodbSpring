@@ -1,0 +1,5 @@
+com\soft\model\UserModel.class
+com\soft\client\Provider.class
+com\soft\dao\UserDao.class
+com\soft\model\UserHobbyModel.class
+com\soft\dao\impl\UserDaoImpl.class
